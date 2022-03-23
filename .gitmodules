@@ -1,0 +1,3 @@
+[submodule "bookshelf-dataset"]
+	path = bookshelf-dataset
+	url = https://github.com/alexm622/bookshelf-dataset
