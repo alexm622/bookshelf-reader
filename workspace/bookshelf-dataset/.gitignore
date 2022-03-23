@@ -1,0 +1,12 @@
+#images
+!training-data/images/*.json
+training-data/images/*.jpg
+training-data/images/*.png
+training-data/images/*.jpeg
+
+!validation-data/images/*.json
+validation-data/images/*.jpg
+validation-data/images/*.png
+validation-data/images/*.jpeg
+#tfrecords
+*.records

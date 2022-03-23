@@ -1,8 +1,8 @@
 import fiftyone as fo
 import fiftyone.brain as fob
 
-IMAGES_DIR = "bookshelf-dataset/images"
-LABELS_PATH = "bookshelf-dataset/runs/labelme2coco/dataset.json"
+IMAGES_DIR = "workspace/bookshelf-dataset/validation-data/images"
+LABELS_PATH = "workspace/bookshelf-dataset/validation-data/runs/labelme2coco/dataset.json"
 if "books" not in fo.list_datasets():
     dataset = fo.Dataset.from_dir(
         dataset_type=fo.types.dataset_types.COCODetectionDataset,
@@ -13,14 +13,15 @@ if "books" not in fo.list_datasets():
     )
 else:
     dataset = fo.load_dataset("books")
-print(fo.list_datasets())
+#export the dataset
 
-counts = dataset.count_values("ground_truth.detections.label")
-
-print(counts)
-
-
+dataset.export(
+    export_dir="workspace/bookshelf-dataset/validation-data/runs/as-tfrecord",
+    dataset_type=fo.types.dataset_types.TFObjectDetectionDataset
+)
+'''
 session = fo.launch_app(dataset)
 i = 0
 while True:
     i += 1
+'''

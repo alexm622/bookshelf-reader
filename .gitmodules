@@ -1,5 +1,5 @@
 [submodule "bookshelf-dataset"]
-	path = bookshelf-dataset
+	path = workspace/bookshelf-dataset
 	url = https://github.com/alexm622/bookshelf-dataset
 [submodule "models"]
 	path = models
