@@ -1,8 +1,13 @@
 import fiftyone as fo
 import fiftyone.brain as fob
+training_data = True
+if training_data:
+    t_or_v = "training-data"
+else:
+    t_or_v = "validation data"
 
-IMAGES_DIR = "workspace/bookshelf-dataset/validation-data/images"
-LABELS_PATH = "workspace/bookshelf-dataset/validation-data/runs/labelme2coco/dataset.json"
+IMAGES_DIR = "workspace/bookshelf-dataset/"+ t_or_v + "/images"
+LABELS_PATH = "workspace/bookshelf-dataset/"+ t_or_v + "/runs/labelme2coco/dataset.json"
 if "books" not in fo.list_datasets():
     dataset = fo.Dataset.from_dir(
         dataset_type=fo.types.dataset_types.COCODetectionDataset,
@@ -16,7 +21,7 @@ else:
 #export the dataset
 
 dataset.export(
-    export_dir="workspace/bookshelf-dataset/validation-data/runs/as-tfrecord",
+    export_dir="workspace/bookshelf-dataset/"+ t_or_v + "/runs/as-tfrecord",
     dataset_type=fo.types.dataset_types.TFObjectDetectionDataset
 )
 '''
