@@ -1,0 +1,1 @@
+python .\model_main_tf2.py --pipeline_config_path=.\models\efficientdet_d7\v1\pipeline.config --model_dir=.\models\efficientdet_d7\ --checkpoint_every_n=4 --num-workers=4 --alsologtostderr

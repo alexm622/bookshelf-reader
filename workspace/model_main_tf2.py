@@ -30,6 +30,7 @@ python model_main_tf2.py -- \
 from absl import flags
 import tensorflow.compat.v2 as tf
 from object_detection import model_lib_v2
+import os
 
 flags.DEFINE_string('pipeline_config_path', None, 'Path to pipeline config '
                     'file.')
@@ -112,4 +113,6 @@ def main(unused_argv):
           record_summaries=FLAGS.record_summaries)
 
 if __name__ == '__main__':
-  tf.compat.v1.app.run()
+    #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    tf.compat.v1.app.run()
+

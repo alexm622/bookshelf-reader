@@ -1,2 +1,5 @@
 pre-trained_models
 models/efficientdet_d7/train
+models/efficientdet_d4/train
+models/efficientdet_d1/train
+ckpt-*
