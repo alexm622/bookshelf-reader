@@ -1,3 +1,6 @@
 [submodule "models"]
 	path = models
 	url = https://github.com/tensorflow/models
+[submodule "workspace/.\\bookshelf-dataset"]
+	path = workspace/.\\bookshelf-dataset
+	url = https://github.com/alexm622/bookshelf-dataset
